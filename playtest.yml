@@ -1,0 +1,19 @@
+---
+playtest.yml
+- concurrency: 50
+  hold-for: 3m
+  ramp-up: 2m
+  
+  scenario: Choose Flight
+ scenario:
+  Choose Flight:
+    requests:
+	- lablel: blazedemo
+	  method: GET
+	  url: http://blazedemo.com/
+	- lablel: reserve
+	 method: POST
+	 url: http://blazedemo.com/reserve.php
+	 body:
+	   fromPort: Me
+	   toPort: Last
